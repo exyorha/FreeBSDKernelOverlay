@@ -1,0 +1,56 @@
+ident       DSO100
+include     "std.armv7"
+include     "../xilinx/std.zynq7"
+
+makeoptions MODULES_EXTRA="dtb/zynq"
+
+options   SCHED_ULE
+options   PLATFORM
+options   SMP
+
+device    gic
+device    pl310
+device    mpcore_timer
+
+device    random
+device    ether
+device    cgem
+device    mii
+device    e100phy
+#device    pty
+device    uart
+device    gpio
+device    md
+device    mmc
+device    mmcsd
+device    sdhci
+device    bpf
+device    usb
+device    ehci
+
+options   FDT
+options   GEOM_UZIP
+
+# UFS support is not required
+nooptions FFS SOFTUPDATES UFS_ACL UFS_DIRHASH UFS_GJOURNAL QUOTA
+
+# NFS support is not required
+nooptions NFSCL NFSLOCKD NFS_ROOT
+
+# BSD partition table is not required
+nooptions GEOM_PART_BSD
+
+nooptions KTRACE
+
+# System-V IPC is not required
+nooptions SYSVSHM SYSVMSG SYSVSEM
+
+# Capability support is not required
+nooptions CAPABILITY_MODE CAPABILITIES MAC
+
+# No DTrace support
+nooptions KDTRACE_HOOKS DDB_CTF
+nomakeoptions WITH_CTF
+
+# No KDB support
+nooptions KDB KDB_TRACE
