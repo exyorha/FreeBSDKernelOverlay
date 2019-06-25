@@ -58,3 +58,5 @@ nooptions KDB, KDB_TRACE
 
 nooptions VIMAGE, TCP_HHOOK, IPSEC, SCTP
 nodevice crypto
+
+device vt
