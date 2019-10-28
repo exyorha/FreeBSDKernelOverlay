@@ -30,6 +30,7 @@ device    usb
 device    ehci
 
 options   FDT
+device    xz
 options   GEOM_UZIP
 
 # UFS support is not required
